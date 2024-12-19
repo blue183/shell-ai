@@ -3,13 +3,17 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"xiongba/shell-ai/config"
 
 	"github.com/spf13/cobra"
 )
 
+var (
+	Conf       *config.Config
+	ConfigPath string
+)
 var rootCmd = &cobra.Command{
-	Use:   "ai",
-	Short: "调用大模型接口",
+	Short: "AI 命令行工具",
 }
 
 func Execute() {
@@ -20,6 +24,6 @@ func Execute() {
 }
 
 func init() {
-	// 添加 aiCmd 到根命令
 	rootCmd.AddCommand(aiCmd)
+
 }
